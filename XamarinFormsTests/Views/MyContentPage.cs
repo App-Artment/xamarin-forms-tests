@@ -23,16 +23,26 @@ namespace XamarinFormsTests.Views
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
+            var buttonBackToStartPage = new Button {
+                Text = "Back to startpage",
+                HorizontalOptions = LayoutOptions.CenterAndExpand
+            };
+
             Content = new StackLayout {
                 Padding = new Thickness(0, 40, 0, 0),
                 Children = {
                     labelHeader,
-                    buttonBackToMainMenu
+                    buttonBackToMainMenu,
+                    buttonBackToStartPage
                 }
             };
 
             buttonBackToMainMenu.Clicked += delegate {
                 Application.Current.MainPage = new MainMenuPage();
+            };
+
+            buttonBackToStartPage.Clicked += delegate {
+                Application.Current.MainPage = new BasicStartPage();
             };
         }
     }
