@@ -21,7 +21,8 @@ namespace XamarinFormsTests.Views
             string[] listItems = {
                 "My Content Page",
                 "Navigation Page",
-                "Tab Page"
+                "Tab Page",
+                "Startpage"
             };
 
             var listView = new ListView {
@@ -37,9 +38,14 @@ namespace XamarinFormsTests.Views
 
             listView.ItemSelected += delegate(object sender, SelectedItemChangedEventArgs e) {
                 if (e.SelectedItem.Equals (listItems[0])) {
+                    // Open My Content Page
                     Application.Current.MainPage = new MyContentPage();
                 } else if (e.SelectedItem.Equals(listItems[1])) {
+                    // Open My Navigation Page
                     Application.Current.MainPage = new NavigationPage(new MyNavigationPage());
+                } else if (e.SelectedItem.Equals(listItems[3])) {
+                    // Open Startpage
+                    App.ShowStartPage();
                 }
             };
         }
