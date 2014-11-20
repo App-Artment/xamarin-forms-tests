@@ -42,7 +42,7 @@ namespace XamarinFormsTests.Views
             };
 
             buttonBackToStartPage.Clicked += delegate {
-                Application.Current.MainPage = new BasicStartPage();
+                App.ShowStartPage();
             };
         }
     }

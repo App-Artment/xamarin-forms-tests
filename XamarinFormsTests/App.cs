@@ -5,21 +5,18 @@ namespace XamarinFormsTests
 {
     public class App : Application
     {
+        private static Views.BasicStartPage startPage;
+
         public App()
         {
-            MainPage = new Views.BasicStartPage ();
+            MainPage = startPage = new Views.BasicStartPage ();
         }
 
-        public static Page GetMainPage()
-        {    
-            return new ContentPage { 
-                Content = new Label {
-                    Text = "Hello, Forms!",
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                },
-            };
+        public static void ShowStartPage()
+        {
+            Application.Current.MainPage = startPage;
         }
+
     }
 }
 
