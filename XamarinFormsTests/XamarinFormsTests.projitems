@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\BasicStartPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyNavigationPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

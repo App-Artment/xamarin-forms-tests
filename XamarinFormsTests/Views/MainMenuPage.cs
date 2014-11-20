@@ -38,6 +38,8 @@ namespace XamarinFormsTests.Views
             listView.ItemSelected += delegate(object sender, SelectedItemChangedEventArgs e) {
                 if (e.SelectedItem.Equals (listItems[0])) {
                     Application.Current.MainPage = new MyContentPage();
+                } else if (e.SelectedItem.Equals(listItems[1])) {
+                    Application.Current.MainPage = new NavigationPage(new MyNavigationPage());
                 }
             };
         }
