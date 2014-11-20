@@ -12,7 +12,7 @@ namespace XamarinFormsTests.Views
             InitPageContent ();
         }
 
-        public MyNavigationPage (int step)
+        public MyNavigationPage (int step) : base()
         {
             currentStep = step;
 
@@ -21,6 +21,13 @@ namespace XamarinFormsTests.Views
 
         void InitPageContent()
         {
+            ToolbarItems.Add (new ToolbarItem (
+                "Back to menu", 
+                null, 
+                () => { Application.Current.MainPage = new MainMenuPage(); }, 
+                ToolbarItemOrder.Primary)
+            );
+
             var labelHeader = new Label {
                 Text = "My Navigation Page",
                 HorizontalOptions = LayoutOptions.CenterAndExpand
@@ -36,28 +43,17 @@ namespace XamarinFormsTests.Views
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
-            var buttonBackToMainMenu = new Button {
-                Text = "Back to main menu",
-                HorizontalOptions = LayoutOptions.CenterAndExpand
-            };
-
-
             Content = new StackLayout {
                 Padding = new Thickness (0, 40, 0, 0),
                 Children = {
                     labelHeader,
                     labelCurrentStep,
-                    buttonOpenNextPage,
-                    buttonBackToMainMenu
+                    buttonOpenNextPage
                 }
             };
 
             buttonOpenNextPage.Clicked += delegate {
-                this.Navigation.PushAsync(new MyNavigationPage(currentStep + 1));
-            };
-
-            buttonBackToMainMenu.Clicked += delegate {
-                Application.Current.MainPage = new MainMenuPage();
+                Navigation.PushAsync(new MyNavigationPage(currentStep + 1));
             };
         }
     }
