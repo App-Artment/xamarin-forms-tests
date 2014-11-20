@@ -23,6 +23,7 @@ namespace XamarinFormsTests.Views
                 "My Content Page",
                 "Navigation Page",
                 "Font tests",
+                "Controls"
             };
 
             var listView = new ListView {
@@ -46,9 +47,12 @@ namespace XamarinFormsTests.Views
                 } else if (e.SelectedItem.Equals(listItems[2])) {
                     // Open My Navigation Page
                     Application.Current.MainPage = new NavigationPage(new MyNavigationPage());
-                } else  if (e.SelectedItem.Equals(listItems[3])) {
+                } else if (e.SelectedItem.Equals(listItems[3])) {
                     // Font tests
                     Application.Current.MainPage = new NavigationPage(new FontTestPage());
+                } else if (e.SelectedItem.Equals(listItems[4])) {
+                    // Controls
+                    Application.Current.MainPage = new NavigationPage(new ControlListPage());
                 }
             };
         }

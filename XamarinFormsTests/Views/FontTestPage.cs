@@ -12,6 +12,13 @@ namespace XamarinFormsTests.Views
             BindingContext = viewModel = new ViewModels.FontTestViewModel ();
 
             InitPageContent ();
+
+            ToolbarItems.Add (new ToolbarItem (
+                "Back to menu", 
+                null, 
+                () => { Application.Current.MainPage = new MainMenuPage(); }, 
+                ToolbarItemOrder.Primary)
+            );
         }
 
         void InitPageContent()

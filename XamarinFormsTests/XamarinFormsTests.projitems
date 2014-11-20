@@ -16,6 +16,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyNavigationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\FontTestPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FontTestViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ControlListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SliderControlPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
