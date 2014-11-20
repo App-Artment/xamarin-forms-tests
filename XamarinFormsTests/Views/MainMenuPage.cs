@@ -19,7 +19,7 @@ namespace XamarinFormsTests.Views
             };
 
             string[] listItems = {
-                "Content Page",
+                "My Content Page",
                 "Navigation Page",
                 "Tab Page"
             };
@@ -32,6 +32,12 @@ namespace XamarinFormsTests.Views
                 Children = {
                     labelHeader,
                     listView
+                }
+            };
+
+            listView.ItemSelected += delegate(object sender, SelectedItemChangedEventArgs e) {
+                if (e.SelectedItem.Equals (listItems[0])) {
+                    Application.Current.MainPage = new MyContentPage();
                 }
             };
         }
