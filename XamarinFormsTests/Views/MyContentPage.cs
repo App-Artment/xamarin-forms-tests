@@ -15,7 +15,25 @@ namespace XamarinFormsTests.Views
         {
             var labelHeader = new Label {
                 Text = "My Content Page",
+                FontSize = 26,
                 HorizontalOptions = LayoutOptions.CenterAndExpand
+            };
+
+            var labelFontTestDefault = new Label {
+                TextColor = Color.Gray,
+                Text = "Font: Default, size=8",
+                FontSize = 17,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+            };
+
+            var labelFontTestHelvetica = new Label {
+                TextColor = Color.Gray,
+                Text = "Font: HelveticaNeue, size=8",
+                FontFamily = "HelveticaNeue-Light",
+                FontSize = 17,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
             };
 
             var buttonBackToMainMenu = new Button {
@@ -32,6 +50,13 @@ namespace XamarinFormsTests.Views
                 Padding = new Thickness(0, 40, 0, 0),
                 Children = {
                     labelHeader,
+                    new StackLayout {
+                        Children = {
+                            labelFontTestDefault,
+                            labelFontTestHelvetica,
+                        },
+                        VerticalOptions = LayoutOptions.StartAndExpand
+                    },
                     buttonBackToMainMenu,
                     buttonBackToStartPage
                 }

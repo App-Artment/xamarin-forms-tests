@@ -14,8 +14,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyContentPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyNavigationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FontTestPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FontTestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
   </ItemGroup>
 </Project>
