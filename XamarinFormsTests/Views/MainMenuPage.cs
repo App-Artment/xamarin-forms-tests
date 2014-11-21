@@ -13,16 +13,18 @@ namespace XamarinFormsTests.Views
         void InitPageContent()
         {
             var labelHeader = new Label {
-                Text = "Select the page",
-                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Text = "Select a test",
+                FontSize = 30,
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
 
             string[] listItems = {
                 "Startpage",
-                "My Content Page",
-                "Navigation Page",
-                "Font tests",
+                "Content Page",
+                "Navigation Pages",
+                "Font Family tests",
                 "Controls"
             };
 
@@ -31,6 +33,7 @@ namespace XamarinFormsTests.Views
             };
 
             Content = new StackLayout {
+                Padding = new Thickness(0, 20, 0, 0),
                 Children = {
                     labelHeader,
                     listView
