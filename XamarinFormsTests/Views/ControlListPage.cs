@@ -20,7 +20,8 @@ namespace XamarinFormsTests.Views
         void InitPageContent()
         {
             string[] items = {
-                "Slider"
+                "Slider",
+                "Label"
             };
 
             var list = new ListView {
@@ -34,7 +35,10 @@ namespace XamarinFormsTests.Views
             list.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
                 if (e.SelectedItem.Equals(items[0])) {
                     // Slider
-                    Navigation.PushAsync(new SliderControlPage());
+                    Navigation.PushAsync (new SliderControlPage());
+                } else if (e.SelectedItem.Equals(items[1])) {
+                    // Label
+                    Navigation.PushAsync (new LabelControlPage());
                 }
             };
         }

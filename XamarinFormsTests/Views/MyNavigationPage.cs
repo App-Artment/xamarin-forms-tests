@@ -12,7 +12,7 @@ namespace XamarinFormsTests.Views
             InitPageContent ();
         }
 
-        public MyNavigationPage (int step) : base()
+        public MyNavigationPage (int step)
         {
             currentStep = step;
 

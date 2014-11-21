@@ -18,6 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FontTestViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ControlListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SliderControlPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LabelControlPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LabelControlViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

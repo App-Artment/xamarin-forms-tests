@@ -5,11 +5,9 @@ namespace XamarinFormsTests.Views
 {
     public class FontTestPage : ContentPage
     {
-        private ViewModels.FontTestViewModel viewModel;
-
         public FontTestPage ()
         {
-            BindingContext = viewModel = new ViewModels.FontTestViewModel ();
+            BindingContext = new ViewModels.FontTestViewModel ();
 
             InitPageContent ();
 
@@ -24,9 +22,10 @@ namespace XamarinFormsTests.Views
         void InitPageContent()
         {
             var labelDemoText = new Label {
-                Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a accumsan mauris. In hac habitasse platea dictumst. Sed et ante.",
+                Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel placerat justo. Fusce facilisis lectus id dui luctus aliquet ac a ligula. Integer pellentesque nisl et orci porttitor, eget venenatis ligula varius. Donec in nunc a quam efficitur scelerisque id id erat. Phasellus sit amet orci et ipsum lobortis faucibus.<<END>>",
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.Start
+                VerticalOptions = LayoutOptions.StartAndExpand,
+                BackgroundColor = Color.FromHex("f3f3f3")
             };
             labelDemoText.SetBinding(Label.FontFamilyProperty, "FontFamily");
             labelDemoText.SetBinding(Label.FontSizeProperty, "FontSize");
@@ -36,17 +35,25 @@ namespace XamarinFormsTests.Views
             };
             inputFontFamily.SetBinding (Entry.TextProperty, "FontFamily");
 
-            var sliderFontSize = new Slider (4, 32, 12) {
+//            var sliderFontSize = new Slider (4, 32, 12) {
+//                HorizontalOptions = LayoutOptions.FillAndExpand
+//            };
+//            sliderFontSize.SetBinding (Slider.ValueProperty, "FontSize");
+
+            var entryFontSize = new Entry {
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            sliderFontSize.SetBinding (Slider.ValueProperty, "FontSize");
+            entryFontSize.SetBinding (Entry.TextProperty, "FontSize");
+
 
 
             Content = new StackLayout {
                 Padding = new Thickness(20, 20),
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 Children = {
                     inputFontFamily,
-                    sliderFontSize,
+                    entryFontSize,
                     labelDemoText
                 }
             };
