@@ -22,3 +22,6 @@ packages/
 bin/
 obj/
 *.userprefs
+
+#VS
+*.suo
