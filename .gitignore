@@ -25,3 +25,5 @@ obj/
 
 #VS
 *.suo
+*.csproj.user
+*.shproj.user
