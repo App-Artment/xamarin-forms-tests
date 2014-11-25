@@ -25,6 +25,7 @@ namespace XamarinFormsTests.Views
                 "Content Page",
                 "Navigation Pages",
                 "Grid page",
+                "Grid scroll page",
                 "Font Family tests",
                 "Controls"
             };
@@ -55,9 +56,12 @@ namespace XamarinFormsTests.Views
                     // Grid page
                     Application.Current.MainPage = new GridPage();
                 } else if (e.SelectedItem.Equals(listItems[4])) {
+                    // Grid scroll page
+                    Application.Current.MainPage = new GridScrollPage();
+                } else if (e.SelectedItem.Equals(listItems[5])) {
                     // Font tests
                     Application.Current.MainPage = new NavigationPage(new FontTestPage());
-                } else if (e.SelectedItem.Equals(listItems[5])) {
+                } else if (e.SelectedItem.Equals(listItems[6])) {
                     // Controls
                     Application.Current.MainPage = new NavigationPage(new ControlListPage());
                 }
