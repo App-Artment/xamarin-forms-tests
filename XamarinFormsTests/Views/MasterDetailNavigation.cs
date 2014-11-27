@@ -1,0 +1,79 @@
+﻿using System;
+using Xamarin.Forms;
+using System.Collections.Generic;
+
+namespace XamarinFormsTests.Views
+{
+    public class MasterDetailNavigation : MasterDetailPage
+    {
+        private List<ContentPage> Pages;
+
+        public MasterDetailNavigation ()
+        {
+            InitPages ();
+
+            var menuList = new ListView {
+                BackgroundColor = Color.Transparent,
+                ItemsSource = Pages,
+                ItemTemplate = new DataTemplate (typeof(TextCell))
+            };
+            menuList.ItemTemplate.SetBinding (TextCell.TextProperty, "Title");
+
+            Master = new ContentPage {
+                BackgroundColor = Color.FromHex("363636"),
+                Title = "Menu",
+                Content = menuList
+            };
+
+            Detail = new NavigationPage(new ContentPage { 
+                Padding = new Thickness(20, 20),
+                Content = new StackLayout{ 
+                    Children = {
+                        new Label { Text = "Select a menu item" }
+                    }
+                }
+            });
+
+            menuList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
+                var page = e.SelectedItem as ContentPage;
+                if (page != null) {
+                    Detail = new NavigationPage(page);
+                    IsPresented = false;
+                }
+            };
+        }
+
+        void InitPages()
+        {
+            this.Pages = new List<ContentPage> ();
+
+            for (int i = 1; i <= 10; i++) {
+                var btnSubPage = new Button { 
+                    Text = String.Format ("Open sub-page"), 
+                };
+                btnSubPage.Clicked += delegate {
+                    OpenSubPage(String.Format("Sub for page: {0}", i));
+                };
+                var page = new ContentPage {
+                    Padding = new Thickness(20, 20),
+                    Title = String.Format("Page {0}", i),
+                    Content = new StackLayout {
+                        Children = {
+                            new Label { Text = String.Format("Page {0}", i) },
+                            btnSubPage
+                        }
+                    }
+                };
+                this.Pages.Add (page);
+            }
+        }
+
+        void OpenSubPage(string text)
+        {
+            Detail.Navigation.PushAsync (new ContentPage {
+                Content = new Label { Text = text }
+            });
+        }
+    }
+}
+

@@ -27,7 +27,8 @@ namespace XamarinFormsTests.Views
                 "Grid page",
                 "Grid scroll page",
                 "Font Family tests",
-                "Controls"
+                "Controls",
+                "MasterDetail Navigation"
             };
 
             var listView = new ListView {
@@ -64,6 +65,9 @@ namespace XamarinFormsTests.Views
                 } else if (e.SelectedItem.Equals(listItems[6])) {
                     // Controls
                     Application.Current.MainPage = new NavigationPage(new ControlListPage());
+                } else if (e.SelectedItem.Equals(listItems[7])) {
+                    // MasterDetail Navigation
+                    Application.Current.MainPage = new MasterDetailNavigation();
                 }
             };
         }

@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LabelControlViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridScrollPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MasterDetailNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
