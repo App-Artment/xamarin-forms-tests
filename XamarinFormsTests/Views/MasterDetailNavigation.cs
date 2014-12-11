@@ -36,6 +36,7 @@ namespace XamarinFormsTests.Views
 
             menuList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
                 var page = e.SelectedItem as ContentPage;
+
                 if (page != null) {
                     Detail = new NavigationPage(page);
                     IsPresented = false;
@@ -64,6 +65,12 @@ namespace XamarinFormsTests.Views
                         }
                     }
                 };
+
+                page.ToolbarItems.Add(new ToolbarItem("START", null, delegate {
+                    Application.Current.MainPage = App.StartPage;
+                }));
+
+
                 this.Pages.Add (page);
             }
         }

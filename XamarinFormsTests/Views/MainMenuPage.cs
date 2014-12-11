@@ -10,6 +10,16 @@ namespace XamarinFormsTests.Views
             InitPageContent ();
         }
 
+        private static MasterDetailNavigation _masterDetailHost;
+        public static MasterDetailNavigation MasterDetailHost 
+        {
+            get {
+                if (_masterDetailHost == null)
+                    _masterDetailHost = new MasterDetailNavigation ();
+                return _masterDetailHost;
+            }
+        }
+
         void InitPageContent()
         {
             var labelHeader = new Label {
@@ -67,7 +77,7 @@ namespace XamarinFormsTests.Views
                     Application.Current.MainPage = new NavigationPage(new ControlListPage());
                 } else if (e.SelectedItem.Equals(listItems[7])) {
                     // MasterDetail Navigation
-                    Application.Current.MainPage = new MasterDetailNavigation();
+                    Application.Current.MainPage = MasterDetailHost;
                 }
             };
         }
