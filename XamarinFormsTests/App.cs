@@ -7,6 +7,7 @@ namespace XamarinFormsTests
     public class App : Application
     {
         public static Views.BasicStartPage StartPage;
+        public static Views.MainMenuPage MenuPage { get; set; }
 
         public App()
         {

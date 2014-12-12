@@ -33,7 +33,8 @@ namespace XamarinFormsTests.Views
             };
 
             buttonStart.Clicked += delegate {
-                Application.Current.MainPage = new MainMenuPage();
+                App.MenuPage = new MainMenuPage();
+                Application.Current.MainPage = App.MenuPage;
             };
         }
     }

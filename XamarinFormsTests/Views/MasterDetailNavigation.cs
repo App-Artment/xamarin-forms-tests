@@ -67,12 +67,22 @@ namespace XamarinFormsTests.Views
                 };
 
                 page.ToolbarItems.Add(new ToolbarItem("START", null, delegate {
-                    Application.Current.MainPage = App.StartPage;
+                    Application.Current.MainPage = App.MenuPage;
                 }));
 
 
 				this.Pages.Add (new NavigationPage(page) { Title = page.Title});
             }
+        }
+
+        public void OpenPage(int index)
+        {
+            if (index >= Pages.Count) {
+                // Index out of range
+                return;
+            }
+
+            Detail = Pages [index];
         }
 
         void OpenSubPage(string text)

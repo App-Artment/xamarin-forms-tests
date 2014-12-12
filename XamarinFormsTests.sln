@@ -73,7 +73,7 @@ Global
 		{2F44C787-A619-4A5F-B448-353DD085A706}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Android\XamarinFormsTests.Android.csproj
+		StartupItem = iOS\XamarinFormsTests.iOS.csproj
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		XamarinFormsTests\XamarinFormsTests.projitems*{d1264fd6-7264-4201-8e19-2cb6ebcda87a}*SharedItemsImports = 13

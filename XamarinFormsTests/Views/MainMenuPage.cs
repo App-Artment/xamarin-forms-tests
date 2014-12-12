@@ -38,7 +38,10 @@ namespace XamarinFormsTests.Views
                 "Grid scroll page",
                 "Font Family tests",
                 "Controls",
-                "MasterDetail Navigation"
+                "MasterDetail Navigation",
+                "MasterDetail Navigation ->> Page 1",
+                "MasterDetail Navigation ->> Page 2",
+                "MasterDetail Navigation ->> Page 3"
             };
 
             var listView = new ListView {
@@ -54,6 +57,9 @@ namespace XamarinFormsTests.Views
             };
 
             listView.ItemSelected += delegate(object sender, SelectedItemChangedEventArgs e) {
+                if (e.SelectedItem == null)
+                    return;
+
                 if (e.SelectedItem.Equals(listItems[0])) {
                     // Open Startpage
                     App.ShowStartPage();
@@ -78,7 +84,15 @@ namespace XamarinFormsTests.Views
                 } else if (e.SelectedItem.Equals(listItems[7])) {
                     // MasterDetail Navigation
                     Application.Current.MainPage = MasterDetailHost;
+                } else if (e.SelectedItem.Equals(listItems[8]) || e.SelectedItem.Equals(listItems[9]) || e.SelectedItem.Equals(listItems[10])) {
+                    // MasterDetail Navigation - direct page open
+                    var item = e.SelectedItem.ToString();
+                    var index = int.Parse(item.Substring(item.Length - 1)) - 1;
+                    Application.Current.MainPage = MasterDetailHost;
+                    MasterDetailHost.OpenPage(index);
                 }
+
+                listView.SelectedItem = null;
             };
         }
     }
