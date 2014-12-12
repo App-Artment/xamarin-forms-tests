@@ -6,7 +6,7 @@ namespace XamarinFormsTests.Views
 {
     public class MasterDetailNavigation : MasterDetailPage
     {
-        private List<ContentPage> Pages;
+		private List<NavigationPage> Pages;
 
         public MasterDetailNavigation ()
         {
@@ -35,10 +35,10 @@ namespace XamarinFormsTests.Views
             });
 
             menuList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
-                var page = e.SelectedItem as ContentPage;
+				var page = e.SelectedItem as NavigationPage;
 
                 if (page != null) {
-                    Detail = new NavigationPage(page);
+                    Detail = page;
                     IsPresented = false;
                 }
             };
@@ -46,7 +46,7 @@ namespace XamarinFormsTests.Views
 
         void InitPages()
         {
-            this.Pages = new List<ContentPage> ();
+			this.Pages = new List<NavigationPage> ();
 
             for (int i = 1; i <= 10; i++) {
                 var btnSubPage = new Button { 
@@ -71,7 +71,7 @@ namespace XamarinFormsTests.Views
                 }));
 
 
-                this.Pages.Add (page);
+				this.Pages.Add (new NavigationPage(page) { Title = page.Title});
             }
         }
 
